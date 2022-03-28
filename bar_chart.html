@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <link rel="stylesheet" href="css/bar_chart_styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="script/bar_chart_script.js"></script>
+
+</head>
+<title>
+
+</title>
+
+<body>
+  <p>
+    <table>
+      <tr>
+        <td>
+          Please enter a Title for a bar chart element:
+        </td>
+        <td>
+          <input id="txtBarTitle" type="text">
+        </td>
+      </tr>
+        <td>
+          Please enter a Value for a bar chart element:
+        </td>
+        <td>
+          <input id="txtBarValue" type="text">
+        </td>
+      <tr>
+        <td><br><br>
+          <input id="txtBarTitles" type="textarea" value="" readonly>
+        </td>
+        <td><br><br>
+          <input id="txtBarValues" type="textarea" value="" readonly>
+        </td>
+      </tr>
+      </table>
+
+  </p>
+  <input id="btnAddItem" type="button" value="Add Item" onclick="return addItem()">
+  <input id="btnResetAll" type="button" value="Reset All">
+  <input id="btnChartMe" type="button" value="Chart Me">
+
+  <p>
+
+  </p>
+</body>
+
+</html>
