@@ -1,4 +1,4 @@
-const errorChecks() {
+const errorChecks = function() {
 
 }
 const calcBarWeight = function(lowerLimit, upperLimit)
