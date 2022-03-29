@@ -1,0 +1,72 @@
+
+#gridDiv {
+  background-color: #666699;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+#gridDiv0 {
+  background-color: #CCFFCC;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv1 {
+  background-color: #CCFFFF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv2 {
+  background-color: #CCE5FF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv3 {
+  background-color: #CCCCFF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv4 {
+  background-color: #E5CCFF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv5 {
+  background-color: #E0E0E0;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv6 {
+  background-color: #99CCFF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv7 {
+  background-color:#9999FF;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv8 {
+  background-color: #A0A0A0;
+  text-align: center;
+  vertical-align: bottom;
+}
+#gridDiv9 {
+  background-color: #FFCCCC;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+#myChart {
+  text-align: center;
+  vertical-align: bottom;
+}
+
+#gridTd {
+  background-color: #C0C0C0;
+  text-align: center;
+  vertical-align: bottom;
+}
+
+/*#gridTh {
+  transform: rotate(-90deg);
+}*/
