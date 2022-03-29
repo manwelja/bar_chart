@@ -15,6 +15,39 @@
     <table>
       <tr>
         <td>
+          Please enter a title for the bar chart:
+        </td>
+        <td>
+          <input id="txtBarChartTitle" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Please enter the lower limit for the bar chart:
+        </td>
+        <td>
+          <input id="txtBarLowerLimit" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Please enter the upper limit for the bar chart:
+        </td>
+        <td>
+          <input id="txtBarUpperLimit" type="text">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          Please enter the type of data ($, %, etc):
+        </td>
+        <td>
+          <input id="txtBarDType" type="text">
+        </td>
+      </tr>
+      <tr><td><br></td><td><br></td></tr>
+      <tr>
+        <td>
           Please enter a Title for a bar chart element:
         </td>
         <td>
@@ -29,22 +62,40 @@
         </td>
       <tr>
         <td><br><br>
-          <input id="txtBarTitles" type="textarea" value="" readonly>
+          <input id="txtBarTitles" type="textarea" value="a,b,c,d,e" readonly>
         </td>
         <td><br><br>
-          <input id="txtBarValues" type="textarea" value="" readonly>
+          <input id="txtBarValues" type="textarea" value="10,50,100,150,200" readonly>
         </td>
       </tr>
       </table>
 
   </p>
-  <input id="btnAddItem" type="button" value="Add Item" onclick="return addItem()">
+  <input id="btnAddItem" type="button" value="Add Item">
   <input id="btnResetAll" type="button" value="Reset All">
   <input id="btnChartMe" type="button" value="Chart Me">
+<br><br>
 
-  <p>
 
-  </p>
+  <table id="myChart" class="mygraph" border="1">
+    <caption class="barTitle"></caption>
+    <thead>
+      <tr class="trBottomLabels">
+        <th scope="col">Item</th>
+        <th scope="colgroup" colspan="99">Type</th>
+      </tr>
+    </thead>
+    <tbody class="horizontal">
+
+    </tbody>
+  </table>
+
+
 </body>
 
 </html>
+
+
+
+
+
