@@ -1,4 +1,35 @@
-
+h1 {
+  display: block;
+  text-align:center;
+  font-size:40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+body {
+  background-color: #E0E0E0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px;
+}
+#gridTr {
+  height: 300px;
+}
+td.barChartInfo {
+  font-weight: bold;
+}
+#barChart {
+  text-align: center;
+  vertical-align: bottom;
+  table-layout: fixed;
+  width: 100%;
+}
+.barChartTitle {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:16px;
+  font-weight:bold;
+}
+.divBar:hover{
+  opacity: 0.5;
+}
 #gridDiv {
   background-color: #666699;
   text-align: center;
@@ -56,10 +87,7 @@
   vertical-align: bottom;
 }
 
-#myChart {
-  text-align: center;
-  vertical-align: bottom;
-}
+
 
 #gridTd {
   background-color: #C0C0C0;

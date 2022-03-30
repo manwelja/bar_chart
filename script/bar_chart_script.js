@@ -1,3 +1,4 @@
+const barChartHeight = 300;
 //helper function to detect missing input items
 const barChartParamsMissing = function() {
   let txtBarChartTitle = $("#txtBarChartTitle").val();
@@ -53,24 +54,23 @@ const barChartTableParamsMissing = function() {
 
 }
 //helper function - error check to ensure value entered is not < lower or > upper limits
-
 const upperLowerLimitError = function() {
   let txtValue = $("#txtBarValue").val();
   let txtBarChartUpper = $("#txtBarUpperLimit").val();
   let txtBarChartLower = $("#txtBarLowerLimit").val();
   let errorFlag = false;
-
-  if(txtValue < txtBarLowerLimit) {
+alert(txtBarChartUpper);
+  if(txtValue < txtBarChartLower) {
     errorFLag = true;
     alert("The bar value must be greater than the lower limit of the chart.")
-  }if(txtValue > txtBarLowerLimit) {
-    errorFLag = true;
+  }if(txtValue > txtBarChartUpper) {
+    errorFlag = true;
     alert("The bar value must be lower than the upper limit of the chart.")
   }
   return errorFlag;
 }
 
-//calculate the width of each table column
+//calculate the height of each table column div
 const calcBarWeight = function(lowerLimit, upperLimit)
 {
   let span = upperLimit - lowerLimit;
@@ -89,22 +89,25 @@ $(document).ready(function() {
     let txtBarChartLower = $("#txtBarLowerLimit").val();
     let txtBarDType = $("#txtBarDType").val();
 
-    let tableBody = $("#myChart tbody:last");
+    let tableBody = $("#barChart tbody:last");
     let tableRows = 0, prevHeight = 0, divInterval = 0, gridCount = 0;
 
+    //Set the table caption to the user entered value
+    $("#barChart").find("caption").text($("#txtBarChartTitle").val());
+    //Get the weight of each bar, relative to the table height
     barWeight = calcBarWeight($("#txtBarLowerLimit").val(), $("#txtBarUpperLimit").val())
 
     const arrTitleRange = $("#txtBarTitles").val().split(",");
     const arrValueRange = $("#txtBarValues").val().split(",");
 
     tableRows = arrValueRange + 1;
-    tdLine = "<tr height=300px><th id=gridTh>";
+    tdLine = "<tr id=gridTr><th id=gridTh>";
     let divText = txtBarChartUpper;
     for(let y = 1;y < 6 ; y++) {
 
         divText -= divInterval;
         divInterval = (txtBarChartUpper - txtBarChartLower) / 5;
-        let divHeight = 300/5;
+        let divHeight = barChartHeight/5;
 
         tdLine+= "<div style = \"height: " + divHeight + "px\">" + divText + "</div>";
     }
@@ -118,7 +121,7 @@ $(document).ready(function() {
       }else {
         gridCount = i - 10;
       }
-      tdLine += "<td id=gridTd><div id=gridDiv" + gridCount + " style = \"height: " +  arrValueRange[i]/barWeight + "px;\">" + arrValueRange[i] + txtBarDType + "</div></td>";
+      tdLine += "<td id=gridTd><div class=divBar id=gridDiv" + gridCount + " style = \"height: " +  arrValueRange[i]/barWeight + "px;\">" + arrValueRange[i] + txtBarDType + "</div></td>";
     }
     tdLine += "</tr>";
     tableBody.append(tdLine);
@@ -129,6 +132,10 @@ $(document).ready(function() {
     }
     thLine += "</tr>";
     tableBody.append(thLine);
+
+    //once the chart has been generated, disable the chart me button
+    $("#btnChartMe").attr('disabled','disabled');
+
   });
 });
 
@@ -164,6 +171,9 @@ $(document).ready(function() {
           $("#txtBarValue").val("");
         }
       }
+      //display the values entered so far
+      $("#inputTitles").html($("#txtBarTitles").val());
+      $("#inputValues").html($("#txtBarValues").val());
     }
   });
 });
@@ -173,10 +183,7 @@ $(document).ready(function() {
   $("#btnResetAll").click(function(){
     let confirmAction = confirm("Are you sure to want to reset all of the bar chart values?");
     if (confirmAction) {
-      $("#txtBarTitle").val("");
-      $("#txtBarValue").val("");
-      $("#txtBarTitles").val("");
-      $("#txtBarValues").val("");
+      location.reload();
     }
   });
 });

@@ -6,13 +6,12 @@
   <script src="script/bar_chart_script.js"></script>
 
 </head>
-<title>
-
-</title>
-
+<title>Dynamic Bar Chart Generator</title>
 <body>
+  <h1>Dynamic Bar Chart Generator</h1>
   <p>
-    <table>
+    <table id="inputTable">
+      <tr><td class="barChartInfo" cospan="2">Bar Chart Details</td></tr>
       <tr>
         <td>
           Please enter a title for the bar chart:
@@ -46,39 +45,51 @@
         </td>
       </tr>
       <tr><td><br></td><td><br></td></tr>
+      <tr><td class="barChartInfo" cospan="2">Bar Chart Data</td></tr>
       <tr>
         <td>
-          Please enter a Title for a bar chart element:
+          Please enter the title of the bar chart element add:
         </td>
         <td>
           <input id="txtBarTitle" type="text">
         </td>
       </tr>
         <td>
-          Please enter a Value for a bar chart element:
+          Please enter the value for a bar chart element to add:
         </td>
         <td>
           <input id="txtBarValue" type="text">
         </td>
-      <tr>
+      <tr id="inputData">
         <td><br><br>
-          <input id="txtBarTitles" type="textarea" value="a,b,c,d,e,a,b,c,d,e,a,b,c,d,e" readonly>
+          <input id="txtBarTitles" type="hidden" value="" readonly>
         </td>
         <td><br><br>
-          <input id="txtBarValues" type="textarea" value="10,50,100,150,200,10,50,100,150,200,10,50,100,150,200" readonly>
+          <input id="txtBarValues" type="hidden" value="" readonly>
         </td>
       </tr>
+      <tr id="inputDisplay">
+        <td>
+          <p>Titles<br></p>
+          <p id="inputTitles"></p>
+        </td>
+        <td>
+          <p>Values<br></p>
+          <p id="inputValues"></p>
+        </td>
+      </tr>
+
       </table>
 
   </p>
-  <input id="btnAddItem" type="button" value="Add Item">
-  <input id="btnResetAll" type="button" value="Reset All">
-  <input id="btnChartMe" type="button" value="Chart Me">
-<br><br>
+  <p>
+    <input id="btnAddItem" type="button" value="Add Item">
+    <input id="btnResetAll" type="button" value="Reset All">
+    <input id="btnChartMe" type="button" value="Chart Me">
+  </p>
 
-
-  <table id="myChart" class="myGraph" border="1">
-    <caption class="barTitle"></caption>
+  <table id="barChart">
+    <caption class="barChartTitle"></caption>
     <thead>
 
     </thead>
@@ -88,7 +99,6 @@
   </table>
 
 </body>
-
 </html>
 
 
